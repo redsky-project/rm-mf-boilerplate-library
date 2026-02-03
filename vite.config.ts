@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { federation } from '@module-federation/vite';
-// import dts from 'vite-plugin-dts';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,8 +11,8 @@ export default defineConfig({
 		react(),
 		tailwindcss(),
 		federation({
-			name: 'rm_mf_library',
-			filename: 'remoteEntry.js',
+			name: 'RmMfLibrary',
+			filename: 'rm-mf-library-entry.js',
 			exposes: {
 				'./components': './src/components/index.ts',
 				'./hooks': './src/hooks/index.ts',
@@ -31,22 +30,10 @@ export default defineConfig({
 				tailwindcss: { singleton: true },
 			},
 		}),
-		// dts({
-		// 	include: ['src'],
-		// 	outDir: 'dist',
-		// 	insertTypesEntry: true,
-		// }),
 	],
 	build: {
 		lib: {
-			entry: {
-				index: resolve(__dirname, 'src/index.ts'),
-				components: resolve(__dirname, 'src/components/index.ts'),
-				hooks: resolve(__dirname, 'src/hooks/index.ts'),
-				utils: resolve(__dirname, 'src/utils/index.ts'),
-				services: resolve(__dirname, 'src/services/index.ts'),
-				store: resolve(__dirname, 'src/store/index.ts'),
-			},
+			entry: resolve(__dirname, 'src/index.ts'),
 			name: 'RmMfLibrary',
 			formats: ['es'],
 		},
