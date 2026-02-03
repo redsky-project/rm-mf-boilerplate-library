@@ -1,4 +1,4 @@
-import { ComponentExample } from '@/core/components/shadcn/component-example';
+import { ComponentExample } from '@/components/component-example';
 
 export function App() {
 	return <ComponentExample />;
