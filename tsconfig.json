@@ -1,13 +1,15 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+	"files": [],
+	"references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"rootDir": "./src", // 추가
+		"jsx": "react-jsx", // 추가 필요!
+		"target": "ES2022", // 추가 권장
+		"module": "ESNext", // 추가 권장
+		"moduleResolution": "bundler", // 추가 권장
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
 }
